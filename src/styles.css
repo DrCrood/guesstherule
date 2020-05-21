@@ -1,0 +1,126 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/* Application-wide Styles */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* For Angular material icon */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v48/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+/* End of Angular material icon style */
+
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+    text-align: center;
+  }
+
+  h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+    text-align: center;
+  }
+
+  h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+ 
+  body {
+    background-color: rgb(227, 253, 253);
+  }
+
+  body, input[type="text"], button {
+    color: black;
+    font-family: Cambria, Georgia;
+  }
+  
+  /* everywhere else */
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.inputnumber {
+  width: 100px;
+  margin-left: 0px;
+  padding: 0px;
+  overflow-x: auto;
+  border: 1px solid darkgreen;
+  font-family: Arial, Helvetica, sans-serif;
+  height:30px;
+  font-size: 1.2rem;
+  align-content: center;
+  color: black;
+}
+.inputnumber {
+  -moz-appearance:textfield;
+}
+
+.inputnumber::-webkit-outer-spin-button,
+.inputnumber::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+table tr td label {
+  font-family: Arial, Helvetica, sans-serif, Courier, monospace;
+  font-size: 1rem;
+  color: blue;
+  width: 60px;
+}
+
+.resultarea {
+  height: 80px;
+  background-color: rgb(203, 255, 203);
+}
+
+.inputarea {
+  height: 70px;
+  background-color: lightblue;
+}
+
+.errorstyle{
+  color: red;
+}
+.normalstyle{
+  color: blue;
+}
+
+
+.dialogpanel .mat-dialog-container{ /* used for dialog style, need to be in global css file  */
+  background-color: rgb(216, 244, 245);
+  border-radius: 10px;
+  padding: 0px;
+  text-align: center;
+}
+
+.normalbackdropbg{
+  background-color: transparent;
+}
+
+.winbackdropbg{
+  background-color: rgba(0, 206, 45, 0.1);
+}

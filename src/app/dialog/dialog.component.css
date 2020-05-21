@@ -1,0 +1,22 @@
+.display{
+    display: inline-block;
+}
+
+.hide{
+    display: none;
+}
+
+.activesvg{
+    cursor: pointer;
+}
+
+
+.diatitle{
+    background-color: rgb(138, 223, 223);
+    font-size: 1.5rem;
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;  /* this put the text at the center */
+    cursor: move;
+    font-weight: normal;
+}

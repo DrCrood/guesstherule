@@ -1,0 +1,40 @@
+<div class="diatitle" cdkDrag cdkDragRootElement=".cdk-overlay-pane" cdkDragHandle>{{title}}</div>
+<div mat-dialog-content style="display: inline-block; padding: 10px;">
+  <div *ngIf="data.Type === 9; then tempwon;"></div>
+  <div *ngIf="data.Type === 5; then temptestwarn;"></div>
+  <div *ngIf="data.Type === 1; then tempfail;"></div>
+</div>
+
+  <ng-template #tempwon>
+    <div style="font-size: 1.5rem; color: rgb(3, 131, 56);">
+     <p>Great work!!!</p>
+     <p style="font-size: 80%;">You completed a <br>challenging game!</p>
+    </div>
+    <div>
+       <button mat-button [mat-dialog-close]="1"
+       style="margin-top: 25px; margin-right: 25px; background-color: rgb(197, 231, 164); color: rgb(0, 0, 0); border-radius: 10px; padding: 5px">New game</button>
+       <button mat-button [mat-dialog-close]="0"
+       style="margin-top: 25px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); border-radius: 10px; padding: 5px">Cancel</button>
+    </div> 
+  </ng-template>
+
+  <ng-template #temptestwarn>
+    <div style="font-size: 1.5rem; color: rgb(3, 131, 56);">
+      <br>
+      <p [innerHTML]="greeting"></p>
+     <p style="font-size: 100%;">You need another <br> {{data.Tests}} test(s) <br> to pass this rule!</p>
+    </div>
+  </ng-template>
+
+  <ng-template #tempfail>
+    <div style="font-size: 1.5rem; color: rgb(3, 131, 56);">
+     <p style="font-size: 100%;">You reached level : <b> {{data.Level}}</b>.</p>
+     <p style="font-size: 80%;"> Total levels : <b> 5 </b>.</p>
+    </div>
+    <div>
+       <button mat-button [mat-dialog-close]="1"
+       style="margin-top: 25px; margin-right: 25px; background-color: rgb(197, 231, 164); color: rgb(0, 0, 0); border-radius: 10px; padding: 5px">New game</button>
+       <button mat-button [mat-dialog-close]="0"
+       style="margin-top: 25px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); border-radius: 10px; padding: 5px">Cancel</button>
+    </div> 
+  </ng-template>  

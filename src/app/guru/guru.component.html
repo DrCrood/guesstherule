@@ -1,0 +1,83 @@
+<h1>
+  Find the rule!
+</h1>
+<h2>Train your strategic thinking by reasoning and testing!</h2>
+<h3>Figure out how the total points of the dice set is counted.</h3>
+<br>
+<div fxLayout="row" fxLayoutAlign="space-around center">
+  <h1 [ngClass]="getlevelClass()">Level: {{LEVEL}}</h1>
+  <mat-progress-bar class="progbar" mode="determinate" color="primary" value="{{progress}}"> </mat-progress-bar>
+  <h1><u>&nbsp; Score: {{score}} &nbsp; </u></h1>
+</div>
+
+<div style="text-align: center;">
+
+ <div fxLayout="row" fxLayoutAlign="space-around center">
+  <div Class="dicepanel">
+    <canvas #rendererCanvas id="renderCanvas"></canvas>
+  </div>
+ </div> 
+
+<div style="margin-top: 10px; margin-bottom: 10px;">
+  <button class="throwbutton" color="primary" (click)="throw_dice()" [innerHTML]="gameEnd? 'New game' : 'New throw' "></button>
+</div>
+
+<!-- <div style="font-size: 2rem;">
+  {{counts.toString()}} &nbsp; &nbsp; {{faceValues.toString()}}
+</div> -->
+
+<div *ngIf="rolling; then rollingDiv else tableDiv"></div>
+<div *ngIf="testmode; then TestDiv else PointsDiv"></div>
+
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px" >
+  <button mat-raised-button class="gotbtn" (click)="TestRule()" [disabled]="rolling || gameEnd"  [innerHTML]="testmode? 'Need more demo' : 'I Got The Rule' "></button>
+  <button mat-raised-button class="skipbtn" (click)="SkipRule()" [disabled]="!allowSkip || rolling || gameEnd" >Skip this rule</button>
+</div>
+</div>
+
+<ng-template #PointsDiv>
+  <div [ngClass]="{'pointClass': !rolling, 'hidepoint': rolling}">
+    Points of the roll = <span style="font-size: 150%; color: green;">{{POINTS}}</span>
+  </div>
+</ng-template>
+
+<ng-template #TestDiv>
+   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="testpointClass">
+      The points = &nbsp; <input type="number" #points min="0" max="100" [ngClass]="{'ptsnumR': answer == 0,'ptsnumC': answer == 1,'ptsnumW': answer == 2 }">
+      <button mat-raised-button class="checkbtn" [disabled]="gameEnd" (click)="CheckPoints()" >Check</button>
+   </div>
+   <div class="levelnote">
+     Make two rules right to pass the level.
+   </div>
+</ng-template>
+
+<ng-template #rollingDiv>
+  <div class="rollingdiv">
+   Please wait for dices to stop rolling ...
+  </div>
+</ng-template>
+
+<ng-template #tableDiv>
+  <table class="facetable">
+    <tr>
+      <td *ngIf="faceImgPath.length>0" [ngStyle]="{'background-color': dices[0].edgeColor }"> <img [ngClass]="getpicClass(faceShapes[0])" src={{faceImgPath[0]}} alt="Dice face">  </td>
+      <td *ngIf="faceImgPath.length>1" [ngStyle]="{'background-color': dices[1].edgeColor }"> <img [ngClass]="getpicClass(faceShapes[1])" src={{faceImgPath[1]}} alt="Dice face">  </td>
+      <td *ngIf="faceImgPath.length>2" [ngStyle]="{'background-color': dices[2].edgeColor }"> <img [ngClass]="getpicClass(faceShapes[2])" src={{faceImgPath[2]}} alt="Dice face">  </td>
+      <td *ngIf="faceImgPath.length>3" [ngStyle]="{'background-color': dices[3].edgeColor }"> <img [ngClass]="getpicClass(faceShapes[3])" src={{faceImgPath[3]}} alt="Dice face">  </td>
+      <td *ngIf="faceImgPath.length>4" [ngStyle]="{'background-color': dices[4].edgeColor }"> <img [ngClass]="getpicClass(faceShapes[4])" src={{faceImgPath[4]}} alt="Dice face">  </td>
+      <td *ngIf="faceImgPath.length>5" [ngStyle]="{'background-color': dices[5].edgeColor }"> <img [ngClass]="getpicClass(faceShapes[5])" src={{faceImgPath[5]}} alt="Dice face">  </td>
+    </tr>
+    <tr [ngClass]="{'displaybtn': !testmode, 'hidebtn': testmode}">
+      <td *ngIf="faceImgPath.length>0"> <button mat-raised-button class="flipbtn" (click)="rolldice(1)">Roll </button>  </td>
+      <td *ngIf="faceImgPath.length>1"> <button mat-raised-button class="flipbtn" (click)="rolldice(2)">Roll </button>  </td>
+      <td *ngIf="faceImgPath.length>2"> <button mat-raised-button class="flipbtn" (click)="rolldice(3)">Roll </button>  </td>
+      <td *ngIf="faceImgPath.length>3"> <button mat-raised-button class="flipbtn" (click)="rolldice(4)">Roll </button>  </td>
+      <td *ngIf="faceImgPath.length>4"> <button mat-raised-button class="flipbtn" (click)="rolldice(5)">Roll </button>  </td>
+      <td *ngIf="faceImgPath.length>5"> <button mat-raised-button class="flipbtn" (click)="rolldice(6)">Roll </button>  </td>
+    </tr>
+  </table>
+</ng-template>
+ 
+<br><br><br>
+<div>rule in use: {{ruleinuse}}  Rule: {{RULE}} &nbsp; &nbsp; Tries: {{checks}}  &nbsp; &nbsp; Rule skiped: {{ruleSkips}}  </div>
+  

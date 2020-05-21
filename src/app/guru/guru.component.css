@@ -1,0 +1,211 @@
+.dicepanel{
+  touch-action: none;
+}
+
+#renderCanvas{
+
+}
+
+.facetable{
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+.facetable tr td{
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  text-align: center;
+}
+
+.regpic{
+  width: 65px;
+  height: 65px;
+  margin-top: 5px;
+}
+
+.vertpic{
+  width: 30px;
+  height: 60px;
+  margin-top: 7px;
+}
+
+.horipic{
+  width: 60px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.pointClass{
+  color: blue;
+  font-size: 1.5rem;
+}
+
+.hidepoint{
+  display: none;
+}
+
+.testpointClass{
+  color: blue;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.ptsnumR{
+  width: 6rem;
+  height: 2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.ptsnumC{
+  width: 6rem;
+  height: 2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: limegreen;
+}
+
+.ptsnumW{
+  width: 6rem;
+  height: 2rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5rem;
+  background-color: red;
+}
+
+.progbar {
+  width: 25%;
+  height: 40px;
+  border-radius: 8px;
+  background-color: rgb(185, 181, 181);
+}
+
+
+.displaybtn{
+  font-size: 2rem;
+}
+
+.hidebtn{
+  display: none;
+}
+
+.gotbtn{
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: rgb(119, 250, 255);
+}
+
+.checkbtn{
+  font-size: 1rem;
+  color: darkgreen;
+}
+
+.flipbtn{
+  color: blue;
+  font-size: 1rem;
+  background-color: rgb(169, 255, 222);
+}
+
+.skipbtn{
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  background-color: rgb(236, 112, 10);
+}
+
+.throwbutton{
+  font-size: 2rem;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: blue;
+}
+
+.rollingdiv{
+  height: 100px;
+  width: 60%;
+  background-color: lightgreen;
+  color: brown;
+  font-size: 3vw;
+  text-align: center;
+  display: inline-block;
+  line-height: 150px;
+  height: 150px;
+}
+
+.Level1Class{
+  font-size: 2rem;
+  color: black;
+  background-color: rgb(0, 255, 255);
+  padding: 10px;
+}
+
+.Level2Class{
+  font-size: 2rem;
+  color: rgb(41, 18, 18);
+  background-color: rgb(35, 128, 128);
+  padding: 10px;
+}
+
+.Level3Class{
+  font-size: 2rem;
+  color: rgb(185, 66, 189);
+  background-color: rgb(101, 111, 255);
+  padding: 10px;
+}
+
+.Level4Class{
+  font-size: 2rem;
+  color: rgb(243, 239, 239);
+  background-color: rgb(17, 0, 255);
+  padding: 10px;
+}
+
+.Level5Class{
+  font-size: 2rem;
+  color: rgb(180, 59, 59);
+  background-color: rgb(0, 255, 106);
+  padding: 10px;
+}
+
+.Level6Class{
+  font-size: 2rem;
+  color: rgb(247, 78, 78);
+  background-color: rgb(11, 80, 11);
+  padding: 10px;
+}
+
+.Level7Class{
+  font-size: 2rem;
+  color: rgb(0, 255, 34);
+  background-color: rgb(255, 0, 242);
+  padding: 10px;
+}
+
+.Level8Class{
+  font-size: 2rem;
+  color: rgb(17, 0, 255);
+  background-color: rgb(255, 140, 0);
+  padding: 10px;
+}
+
+.Level9Class{
+  font-size: 2rem;
+  color: rgb(0, 124, 17);
+  background-color: rgb(255, 0, 0);
+  padding: 10px;
+}
+
+.Level10Class{
+  font-size: 2rem;
+  color: rgb(255, 0, 0);
+  background-color: rgb(0, 0, 0);
+  padding: 10px;
+}
